@@ -1,0 +1,19 @@
+local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
+local Window = DevTools:Init({
+    Name = "StormClide  Brookhaven", -- Required: Provide a name for the window
+    Title = "StormClide  Presents", -- Required: Set the title of the loading screen
+    Subtitle = "by @StormClide", -- Required: Add a brief description for the loading screen
+    Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
+    LoadingBackgroundImage = "rbxassetid://6026663728", -- Optional: Set a background image for the loading screen
+    Options = {
+        KillYourself = false, -- Optional: Set to true to reset character on launch
+        FOVAnimations = false, -- Optional: Set to true to enable FOV Animations
+    }
+})
+
+
+local Tab = Window:CreateTab({Name="Information!"})
+
+local Label = Tab:CreateLabel("Info: Official Script of @StormClide!")
+
+local Tab = Window:CreateTab({Name="Home", Icon="rbxassetid://6026568195"})
