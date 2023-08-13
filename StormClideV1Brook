@@ -38,3 +38,14 @@ local Slider = Tab:CreateSlider({
     DevTools.Player:SetSpeed(Value)
     end,
 })
+
+local Label = Tab:CreateLabel("Reset Button")
+
+local Button = Tab:CreateButton({
+    Name = "Reset",
+    Callback = function()
+    DevTools.Player:Kill()
+    end,
+})
+
+
