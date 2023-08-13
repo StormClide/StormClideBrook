@@ -17,3 +17,24 @@ local Tab = Window:CreateTab({Name="Information!"})
 local Label = Tab:CreateLabel("Info: Official Script of @StormClide!")
 
 local Tab = Window:CreateTab({Name="Home", Icon="rbxassetid://6026568195"})
+
+local Tab = Window:CreateTab({Name="Car", })
+
+local Tab = Window:CreateTab({Name="Avatar"})
+
+local Tab = Window:CreateTab({Name="Fun"})
+
+local Label = Tab:CreateLabel("Walkspeed")
+
+local Slider = Tab:CreateSlider({
+    Name = "Walkspeed",
+    Suffix = "Speed",
+
+    Range = {16,100},
+    Interval = 1,
+    Default = 16,
+
+    Callback = function(Value)
+    DevTools.Player:SetSpeed(Value)
+    end,
+})
