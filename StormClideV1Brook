@@ -49,3 +49,9 @@ local Button = Tab:CreateButton({
 })
 
 
+local Tab = Window:CreateTab({Name="Other"})
+
+local Tab = Window:CreateTab({Name="Teleport"})
+
+local Tab = Window:CreateTab({Name="Discord"})
+
