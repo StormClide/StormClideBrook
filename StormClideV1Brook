@@ -55,3 +55,4 @@ local Tab = Window:CreateTab({Name="Teleport"})
 
 local Tab = Window:CreateTab({Name="Discord"})
 
+local Label = Tab:CreateLabel({Name="Discord Link: https://discord.gg/stormclide"})
