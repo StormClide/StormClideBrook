@@ -15,7 +15,7 @@ local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
 
 local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
 local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
-local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Removed Walspeed(Will be added later)\n\n")
+local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n")
 local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Home"})
@@ -26,7 +26,16 @@ local Tab = Window:CreateTab({Name="Fun"})
 
 local Label = Tab:CreateLabel("Walkspeed")
 
+local Input = Tab:CreateInput({
+    Name = "Walkspeed",
+    Range = {16,100},
+    Interval = 1,
+    Default = 16,
 
+    Callback = function(Value)
+    DevTools.Player:SetSpeed(Value)
+    end,
+})
 
 local Label =  Tab:CreateLabel("Infinite Jump")
 
@@ -77,4 +86,3 @@ local Tab = Window:CreateTab({Name="Other"})
 local Tab = Window:CreateTab({Name="Instant"})
 
 local Tab = Window:CreateTab({Name="Kill"})
-
