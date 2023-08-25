@@ -77,8 +77,9 @@ local Button = Tab:CreateButton({
     DevTools.Player:Kill()
     end,
 })
-game.StarterGui:SetCore("SendNotification", {Title="Reseted"; Text="You have Reseted"; Duration = 5;})
 
+	--Notifies readiness
+	game.StarterGui:SetCore("SendNotification", {Title="Reset"; Text="Have Died!"; Duration=5;})
 
 
 local Tab = Window:CreateTab({Name="Other"})
@@ -86,4 +87,4 @@ local Tab = Window:CreateTab({Name="Other"})
 
 local Tab = Window:CreateTab({Name="Instant"})
 
-local Tab = Window:CreateTab({Name="Kill"}) 
+local Tab = Window:CreateTab({Name="Kill"})
