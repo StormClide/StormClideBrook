@@ -11,11 +11,13 @@ local Window = DevTools:Init({
     }
 })
 
+game.StarterGui:SetCore("SendNotification", {Title="Executed"; Text="You have sucessfully executed the script"; Duration = 5;})
+
 local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
 
 local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
 local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
-local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n")
+local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n  •Added Notify When Executed!\n\n")
 local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Home"})
@@ -78,8 +80,7 @@ local Button = Tab:CreateButton({
     end,
 })
 
-	--Notifies readiness
-	game.StarterGui:SetCore("SendNotification", {Title="Reset"; Text="Have Died!"; Duration=5;})
+
 
 
 local Tab = Window:CreateTab({Name="Other"})
