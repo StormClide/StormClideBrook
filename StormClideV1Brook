@@ -1,58 +1,81 @@
 local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
 local Window = DevTools:Init({
-    Name = "StormClide  Brookhaven", -- Required: Provide a name for the window
-    Title = "StormClide  Presents", -- Required: Set the title of the loading screen
+    Name = "🏠StormClide Scripts| Brookhaven🏠", -- Required: Provide a name for the window
+    Title = "StormClide Presents", -- Required: Set the title of the loading screen
     Subtitle = "by @StormClide", -- Required: Add a brief description for the loading screen
     Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
-    LoadingBackgroundImage = "rbxassetid://6026663728", -- Optional: Set a background image for the loading screen
+    LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
         KillYourself = false, -- Optional: Set to true to reset character on launch
-        FOVAnimations = false, -- Optional: Set to true to enable FOV Animations
+        FOVAnimations = true, -- Optional: Set to true to enable FOV Animations
     }
 })
 
+local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
 
-local Tab = Window:CreateTab({Name="Information!"})
+local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
+local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
+local Tab = Window:CreateTab({Name="Car"})
 
-local Label = Tab:CreateLabel("Info: Official Script of @StormClide!")
+local Tab = Window:CreateTab({Name="Home"})
 
-local Tab = Window:CreateTab({Name="Home", Icon="rbxassetid://6026568195"})
-
-local Tab = Window:CreateTab({Name="Car", })
-
-local Tab = Window:CreateTab({Name="Avatar"})
+local Tab = Window:CreateTab({Name="Outfits"})
 
 local Tab = Window:CreateTab({Name="Fun"})
 
 local Label = Tab:CreateLabel("Walkspeed")
 
-local Slider = Tab:CreateSlider({
+local Input = Tab:CreateInput({
     Name = "Walkspeed",
-    Suffix = "Speed",
-
     Range = {16,100},
     Interval = 1,
     Default = 16,
 
     Callback = function(Value)
-    DevTools.Player:SetSpeed(Value)
+        DevTools.Player:SetSpeed(Value)
+
+    end,
+})
+
+local Label =  Tab:CreateLabel("Infinite Jump")
+
+local Button = Tab:CreateButton({
+    Name = "Infinite Jump Toggle",
+    Callback = function()
+        --Toggles the infinite jump between on or off on every script run
+ _G.infinjump = not _G.infinjump
+ 
+ if _G.infinJumpStarted == nil then
+     --Ensures this only runs once to save resources
+     _G.infinJumpStarted = true
+     
+     --Notifies readiness
+     game.StarterGui:SetCore("SendNotification", {Title="Youtube Hub"; Text="Infinite Jump Activated!"; Duration=5;})
+ 
+     --The actual infinite jump
+     local plr = game:GetService('Players').LocalPlayer
+     local m = plr:GetMouse()
+     m.KeyDown:connect(function(k)
+         if _G.infinjump then
+             if k:byte() == 32 then
+             humanoid = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass('Humanoid')
+             humanoid:ChangeState('Jumping')
+             wait()
+             humanoid:ChangeState('Seated')
+             end
+         end
+     end)
+ end
     end,
 })
 
 local Label = Tab:CreateLabel("Reset Button")
 
 local Button = Tab:CreateButton({
-    Name = "Reset",
+    Name = "RESET ME",
     Callback = function()
     DevTools.Player:Kill()
     end,
 })
 
 
-local Tab = Window:CreateTab({Name="Other"})
-
-local Tab = Window:CreateTab({Name="Teleport"})
-
-local Tab = Window:CreateTab({Name="Discord"})
-
-local Label = Tab:CreateLabel({Name="Discord Link: https://discord.gg/stormclide"})
