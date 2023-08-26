@@ -1,9 +1,9 @@
 local DevTools = loadstring(game:HttpGet("https://raw.githubusercontent.com/05-4/DevTools/main/index.lua"))()
 local Window = DevTools:Init({
-    Name = "🏠StormClide Scripts| Brookhaven🏠", -- Required: Provide a name for the window
-    Title = "StormClide Presents", -- Required: Set the title of the loading screen
-    Subtitle = "by @StormClide", -- Required: Add a brief description for the loading screen
-    Icon = "rbxassetid://6031265978", -- Optional: Set an icon for the window
+    Name = "🏠StormClide Scripts|Brookhaven🏠", -- Required: Provide a name for the window
+    Title = "StormClide Presents ", -- Required: Set the title of the loading screen
+    Subtitle = "by StormClide", -- Required: Add a brief description for the loading screen
+    Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
     LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
         KillYourself = false, -- Optional: Set to true to reset character on launch
@@ -11,18 +11,20 @@ local Window = DevTools:Init({
     }
 })
 
-game.StarterGui:SetCore("SendNotification", {Title="Sucessfully Executed", Text="Sucessfully Executed the script!", Icon="rbxassetid://6026568195"})
 
-local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
+game.StarterGui:SetCore("SendNotification", {Title="Executed"; Text="You have executed V1.2.4"; Duration = 5;})
 
-local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
-local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
-local Label = Tab:CreateLabel("Change Logs:\n\n   •Added LoopKill In Instant Page\n\n  •Added Fov Animation Back!\n\n")
+local Tab = Window:CreateTab({Name="Main"})
+local Label = Tab:CreateLabel("The Developers\n\n Owners\n\n •StormClide\n\n •Icy\n\n •HexR\n\n •Zeltales\n\n Programmars\n\n •None\n\n")
+local Label = Tab:CreateLabel("Change Logs\n\n •Remade the Gui\n\n")
+local Label = Tab:CreateLabel("Current Version:\n\n V1.2.4\n\n")
+local Label = Tab:CreateLabel("Discord Server:\n\n https://discord.gg/stormclide\n\n")
+
 local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Home"})
 
-local Tab = Window:CreateTab({Name="Outfits"})
+local Tab = Window:CreateTab({Name="Avatar"})
 
 local Tab = Window:CreateTab({Name="Fun"})
 
@@ -30,6 +32,8 @@ local Label = Tab:CreateLabel("Walkspeed")
 
 local Input = Tab:CreateInput({
     Name = "Walkspeed",
+    Suffix = "Speed",
+    
     Range = {16,100},
     Interval = 1,
     Default = 16,
@@ -38,8 +42,6 @@ local Input = Tab:CreateInput({
     DevTools.Player:SetSpeed(Value)
     end,
 })
-
-local Label =  Tab:CreateLabel("Infinite Jump")
 
 local Button = Tab:CreateButton({
     Name = "Infinite Jump Toggle",
@@ -71,21 +73,34 @@ local Button = Tab:CreateButton({
     end,
 })
 
+local Label = Tab:CreateLabel("JumpPower")
+
+local Input = Tab:CreateInput({
+    Name = "JumpPower",
+
+    Range = {20,100},
+    Interval = 1,
+    Default = 20,
+
+    Callback = function(Value)
+    DevTools.Player:SetJumpPower(Value)
+    end,
+    
+})
+
 local Label = Tab:CreateLabel("Reset Button")
 
 local Button = Tab:CreateButton({
-    Name = "RESET ME",
+    Name = "Reset",
     Callback = function()
     DevTools.Player:Kill()
     end,
 })
 
+local Tab = Window:CreateTab({Name="Instanst"})
 
+local Label = Tab:CreateLabel("LoopKill")
 
-local Tab = Window:CreateTab({Name="Other"})
-
-
-local Tab = Window:CreateTab({Name="Instant"})
 local LoopReset = false
 
 local Toggle = Tab:CreateToggle({
@@ -100,4 +115,10 @@ game:GetService("RunService").RenderStepped:Connect(function()
 		DevTools.Player:Kill()
 	end
 end)
-local Tab = Window:CreateTab({Name="Kill"})
+
+local Tab = Window:CreateTab({Name="Hubs"})
+
+local Label = Tab:CreateLabel("IceHub")
+
+
+local Tab = Window:CreateTab("Other")
