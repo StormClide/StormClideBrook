@@ -3,7 +3,7 @@ local Window = DevTools:Init({
     Name = "🏠StormClide Scripts| Brookhaven🏠", -- Required: Provide a name for the window
     Title = "StormClide Presents", -- Required: Set the title of the loading screen
     Subtitle = "by @StormClide", -- Required: Add a brief description for the loading screen
-    Icon = "rbxassetid://6031280882", -- Optional: Set an icon for the window
+    Icon = "rbxassetid://6031265978", -- Optional: Set an icon for the window
     LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
         KillYourself = false, -- Optional: Set to true to reset character on launch
@@ -11,13 +11,13 @@ local Window = DevTools:Init({
     }
 })
 
-game.StarterGui:SetCore("SendNotification", {Title="Executed"; Text="You have sucessfully executed the script"; Duration = 5;})
+game.StarterGui:SetCore("SendNotification", {Title="Sucessfully Executed", Text="Sucessfully Executed the script!", Icon="rbxassetid://6026568195"})
 
 local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
 
 local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
 local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
-local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n  •Added Notify When Executed!\n\n")
+local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n  •Added Notify When Executed!\n\n  •Edited the Notify Button\n\n  •Edited the Icon Logo\n\n")
 local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Home"})
@@ -79,7 +79,6 @@ local Button = Tab:CreateButton({
     DevTools.Player:Kill()
     end,
 })
-
 
 
 
