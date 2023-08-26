@@ -7,7 +7,7 @@ local Window = DevTools:Init({
     LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
         KillYourself = false, -- Optional: Set to true to reset character on launch
-        FOVAnimations = false, -- Optional: Set to true to enable FOV Animations
+        FOVAnimations = true, -- Optional: Set to true to enable FOV Animations
     }
 })
 
@@ -17,7 +17,7 @@ local Tab = Window:CreateTab({Name="Main", Icon="rbxassetid://6034452663"})
 
 local Label = Tab:CreateLabel("Our Developers\n\n  Owners\n\n   •StormClide\n\n  •Icy\n\n  •HexR\n\n  •Zeltales\n\n ChangeLogs\n\n  •None Yet\n\n Current Version\n\n V1.2.4\n\n ")
 local Label = Tab:CreateLabel("Our Discord:\n\n https://discord.gg/stormclide\n\n")
-local Label = Tab:CreateLabel("Change Logs:\n\n  •Added 3 New Tabs\n\n  •Made Fov Animation  False\n\n  •Readded Walkspeed\n\n  •Added Notify When Executed!\n\n  •Edited the Notify Button\n\n  •Edited the Icon Logo\n\n")
+local Label = Tab:CreateLabel("Change Logs:\n\n   •Added LoopKill In Instant Page\n\n  •Added Fov Animation Back!\n\n")
 local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Home"})
@@ -86,5 +86,18 @@ local Tab = Window:CreateTab({Name="Other"})
 
 
 local Tab = Window:CreateTab({Name="Instant"})
+local LoopReset = false
 
+local Toggle = Tab:CreateToggle({
+    Name = "Loop Reset Character",
+    Callback = function(Value)
+        LoopReset = Value
+    end,
+})
+
+game:GetService("RunService").RenderStepped:Connect(function()
+	if LoopReset then
+		DevTools.Player:Kill()
+	end
+end)
 local Tab = Window:CreateTab({Name="Kill"})
