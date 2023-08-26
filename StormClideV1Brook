@@ -7,7 +7,7 @@ local Window = DevTools:Init({
     LoadingBackgroundImage = "rbxassetid://13677037989", -- Optional: Set a background image for the loading screen
     Options = {
         KillYourself = false, -- Optional: Set to true to reset character on launch
-        FOVAnimations = true, -- Optional: Set to true to enable FOV Animations
+        FOVAnimations = false, -- Optional: Set to true to enable FOV Animations
     }
 })
 
@@ -16,7 +16,7 @@ game.StarterGui:SetCore("SendNotification", {Title="Executed"; Text="You have ex
 
 local Tab = Window:CreateTab({Name="Main"})
 local Label = Tab:CreateLabel("The Developers\n\n Owners\n\n •StormClide\n\n •Icy\n\n •HexR\n\n •Zeltales\n\n Programmars\n\n •None\n\n")
-local Label = Tab:CreateLabel("Change Logs\n\n •Remade the Gui\n\n")
+local Label = Tab:CreateLabel("Change Logs\n\n •Remade the Gui\n\n •Removed Fov Animation!\n\n")
 local Label = Tab:CreateLabel("Current Version:\n\n V1.2.4\n\n")
 local Label = Tab:CreateLabel("Discord Server:\n\n https://discord.gg/stormclide\n\n")
 
