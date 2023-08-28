@@ -121,19 +121,19 @@ local Tab = Window:CreateTab({Name="Hubs"})
 local Label = Tab:CreateLabel("IceHub")
 
 
-local Tab = Window:CreateTab("Other")
+local Tab = Window:CreateTab({Name="Other stuff"})
 
-local Label = Tab:CreateLabel("Fire Me")
+local Label = Tab:CreateLabel("Fire")
 
 local Toggle = Tab:CreateToggle({
-    Name = "Fire Me",
-   Callback = function()
-   for _,v in pairs(game:GetService("Workspace"):WaitForChild("001_Lots"):GetDescendants()) do
-      if v.Name == "001_BBQ" then
-    v.CatchFire.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-  task.wait(1)
-    v.CatchFire.CFrame = CFrame.new(16, 4, -129)
-  end
-end
-   end,
+    Name = "Fire",
+    Callback = function()
+        for _,v in pairs(game:GetService("Workspace"):WaitForChild("001_Lots"):GetDescendants()) do
+            if v.Name == "001_BBQ" then
+          v.CatchFire.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        task.wait(1)
+          v.CatchFire.CFrame = CFrame.new(16, 4, -129)
+        end
+      end
+    end,
 })
